@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemilihan Ketua MPK OSIS 2026/2027</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="logo">MPK OSIS</div>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li>Beranda</li>
+            <li>Daftar Kandidat</li>
+            <li>Hasil Voting</li>
+            <li>Logout</li>
+        </ul>
+    </div>
+         <h1 class="judul-utama">Pemilihan Ketua MPK OSIS</h1>
+
+    <!-- LOGIN CONTAINER -->
+    <div class="container">
+      <div class="logo-group">
+    <img src="logo-sekolah.png" class="logo-img">
+    <img src="logo-rpl.png" class="logo-img">
+</div>
+        
+        <h3>Diharapkan untuk jujur dalam pemilihan</h3>
+
+        <form id="loginForm">
+            <div class="input-group">
+                <input type="text" id="username" required>
+                <label>Username</label>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="password" required>
+                <label>Password</label>
+            </div>
+
+            <button type="submit">Login</button>
+            <div class="error" id="errorMessage"></div>
+        </form>
+    </div>
+    <div class="kandidat-container" id="kandidatPage" style="display:none;">
+    <h2>Daftar Kandidat (Demo)</h2>
+
+    <div class="kandidat-list">
+
+        <!-- OSIS -->
+        <div class="card">
+            <h3>Rafael (OSIS)</h3>
+            <p><strong>Visi:</strong> Mewujudkan OSIS yang aktif, transparan, dan bertanggung jawab dalam membangun budaya sekolah yang positif.</p>
+            <p><strong>Misi:</strong> Mengadakan program kerja yang terencana, bermanfaat, dan melibatkan seluruh siswa secara merata.</p>
+            <button onclick="vote('Rafael')">Pilih</button>
+        </div>
+
+        <div class="card">
+            <h3>Haji (OSIS)</h3>
+            <p><strong>Visi:</strong> Menjadikan sekolah sebagai lingkungan yang disiplin, berprestasi, dan berkarakter.</p>
+            <p><strong>Misi:</strong> Mengadakan program kerja yang terencana, bermanfaat, dan melibatkan seluruh siswa secara merata.</p>
+            <button onclick="vote('Haji')">Pilih</button>
+        </div>
+
+        <div class="card">
+            <h3>Nadia (OSIS)</h3>
+            <p><strong>Visi:</strong> Mendorong kreativitas, inovasi, serta partisipasi aktif seluruh siswa dalam kegiatan sekolah.</p>
+            <p><strong>Misi:</strong> Menjadi jembatan komunikasi antara siswa dan pihak sekolah secara terbuka dan solutif.</p>
+            <button onclick="vote('Nadia')">Pilih</button>
+        </div>
+
+        <div class="card">
+            <h3>Anggita (OSIS)</h3>
+            <p><strong>Visi:</strong> Membangun solidaritas dan rasa kebersamaan antar siswa tanpa membedakan latar belakang.</p>
+            <p><strong>Misi:</strong> Mengembangkan minat dan bakat siswa melalui kegiatan ekstrakurikuler dan event kreatif yang konsisten.</p>
+            <button onclick="vote('Anggita')">Pilih</button>
+        </div>
+
+        <!-- MPK -->
+        <div class="card">
+            <h3>Rafsya (MPK)</h3>
+            <p><strong>Visi:</strong> Menjadi penghubung yang efektif antara siswa dan OSIS untuk mewujudkan keputusan yang adil dan transparan.</p>
+            <p><strong>Misi:</strong> Menampung aspirasi setiap kelas dan menyampaikannya dengan jelas kepada OSIS dan pihak sekolah.</p>
+            <button onclick="vote('Rafsya')">Pilih</button>
+        </div>
+
+        <div class="card">
+            <h3>Fauzi (MPK)</h3>
+            <p><strong>Visi:</strong> Mendorong partisipasi aktif seluruh kelas dalam setiap program sekolah dan kegiatan OSIS.</p>
+            <p><strong>Misi:</strong> Memastikan program kerja OSIS berjalan lancar dan sesuai dengan kebutuhan siswa melalui monitoring dan laporan rutin.</p>
+            <button onclick="vote('Fauzi')">Pilih</button>
+        </div>
+
+        <div class="card">
+            <h3>Mariza (MPK)</h3>
+            <p><strong>Visi:</strong> Menciptakan lingkungan sekolah yang harmonis, demokratis, dan menghargai setiap pendapat siswa.</p>
+            <p><strong>Misi:</strong> Mengajak seluruh siswa aktif berpartisipasi dalam kegiatan sekolah, baik akademik maupun non-akademik.</p>
+            <button onclick="vote('Mariza')">Pilih</button>
+        </div>
+
+        <div class="card">
+            <h3>Syifa (MPK)</h3>
+            <p><strong>Visi:</strong> Menjadi pengawas dan evaluasi program OSIS agar berjalan sesuai rencana dan bermanfaat bagi semua siswa.</p>
+            <p><strong>Misi:</strong> Menjalin komunikasi yang baik antar kelas dan OSIS agar tercipta kerja sama dan solidaritas yang kuat.</p>
+            <button onclick="vote('Syifa')">Pilih</button>
+        </div>
+
+    </div>
+</div>
+    <script>
+const users = [
+    { username: "0081284312", password: "SMAN1CIKAMPEK" },
+    { username: "0081284313", password: "SMAN1CIKAMPEK" },
+    { username: "0081284314", password: "SMAN1CIKAMPEK" }
+    // tambahkan sisanya di sini
+];
+
+function login() {
+    const inputUser = document.getElementById("username").value;
+    const inputPass = document.getElementById("password").value;
+
+    const found = users.find(user => 
+        user.username === inputUser && user.password === inputPass
+    );
+
+    if (found) {
+        alert("Login berhasil!");
+        // bisa redirect halaman di sini
+        // window.location.href = "dashboard.html";
+    } else {
+        alert("Username atau Password salah!");
+    }
+}
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>

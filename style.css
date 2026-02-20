@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+/* Container login */
+.container {
+    width: 380px;
+    padding: 45px 40px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    color: white;
+    text-align: center;
+}
+
+/* Judul utama */
+.container h2 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+/* Subtitle (h3 yang kamu tambahkan) */
+.container h3 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #dcdcdc;
+    margin-bottom: 35px;
+    letter-spacing: 1px;
+}
+
+/* Input */
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Label animasi */
+.input-group label {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: #ddd;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+/* Efek saat focus */
+.input-group input:focus,
+.input-group input:valid {
+    border-bottom: 2px solid #00eaff;
+    box-shadow: 0 5px 10px rgba(0,234,255,0.3);
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label {
+    top: -15px;
+    font-size: 12px;
+    color: #00eaff;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    background: #00eaff;
+    color: #003366;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+button:hover {
+    background: white;
+    transform: scale(1.05);
+}
+
+/* Error */
+.error {
+    text-align: center;
+    margin-top: 15px;
+    color: #ff4d4d;
+    font-size: 14px;
+}
